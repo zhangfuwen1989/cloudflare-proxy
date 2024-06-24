@@ -4,7 +4,7 @@ addEventListener("fetch", (event) => {
 });
 
 const routes = {
-  "cloudflare-proxy.415186314.workers.dev": "https://registry-1.docker.io",
+  "dockerhub.bugaoxing.com": "https://registry-1.docker.io",
   "quay.boown.com": "https://quay.io",
   "gcr.boown.com": "https://gcr.io",
   "k8s-gcr.boown.com": "https://k8s.gcr.io",
