@@ -4,7 +4,7 @@ addEventListener("fetch", (event) => {
 });
 
 const routes = {
- "cloudflare-proxy-485.pages.dev": "https://registry-1.docker.io",
+ "dockerhub.bugaoxing.com": "https://registry-1.docker.io",
 
 };
 
