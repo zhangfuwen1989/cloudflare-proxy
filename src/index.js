@@ -14,9 +14,8 @@ const routes = {
  "pypi.bugaoxing.com": "https://pypi.org",
  "npmjs.bugaoxing.com": "https://registry.npmjs.org",
  "cnpmjs.bugaoxing.com": "http://r.cnpmjs.org",
- "hub.docker.bugaoxing.com": "https://hub.docker.com",
 };
-
+//"hub.docker.bugaoxing.com": "https://hub.docker.com",
 function routeByHosts(host) {
   if (host in routes) {
     return routes[host];
