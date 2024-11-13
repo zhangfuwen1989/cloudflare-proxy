@@ -4,8 +4,9 @@ addEventListener("fetch", (event) => {
 });
 
 const routes = {
+   "dockerpull.bugaoxing.com": "https://registry-1.docker.io",
  "xiaoyu20241012.bugaoxing.com": "https://registry-1.docker.io",
- "dockerpull.bugaoxing.com": "https://registry-1.docker.io",
+ "dp.bugaoxing.com": "https://registry-1.docker.io",
  "quay.bugaoxing.com": "https://quay.io",
  "gcr.bugaoxing.com": "https://gcr.io",
  "k8s-gcr.bugaoxing.com": "https://k8s.gcr.io",
