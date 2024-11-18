@@ -6,16 +6,19 @@ addEventListener("fetch", (event) => {
 const dockerHub = "https://registry-1.docker.io";
 
 const routes = {
-  "646f636b6572.boown.com": dockerHub,
-  "71756179.boown.com": "https://quay.io",
-  "676372.boown.com": "https://gcr.io",
-  "6b38732d676372.boown.com": "https://k8s.gcr.io",
-  "6b3873.boown.com": "https://registry.k8s.io",
-  "67686372.boown.com": "https://ghcr.io",
-  "636c6f7564736d697468.boown.com": "https://docker.cloudsmith.io",
-  "70797069.boown.com": "https://pypi.org",
-  "6e706d6a73.boown.com": "https://registry.npmjs.org",
-  "636e706d6a73.boown.com": "http://r.cnpmjs.org",
+  "dockerpull.bugaoxing.com": dockerHub,
+ "xiaoyu20241012.bugaoxing.com": "https://registry-1.docker.io",
+ "dp.bugaoxing.com": "https://registry-1.docker.io",
+ "quay.bugaoxing.com": "https://quay.io",
+ "gcr.bugaoxing.com": "https://gcr.io",
+ "k8s-gcr.bugaoxing.com": "https://k8s.gcr.io",
+ "k8s.bugaoxing.com": "https://registry.k8s.io",
+ "ghcr.bugaoxing.com": "https://ghcr.io",
+ "cloudsmith.bugaoxing.com": "https://docker.cloudsmith.io",
+ "pypi.bugaoxing.com": "https://pypi.org",
+ "npmjs.bugaoxing.com": "https://registry.npmjs.org",
+ "cnpmjs.bugaoxing.com": "http://r.cnpmjs.org",
+ "hub.docker.bugaoxing.com": "https://hub.docker.com",
 };
 
 function routeByHosts(host) {
