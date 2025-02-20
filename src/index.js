@@ -105,11 +105,21 @@ async function handleRequest(request) {
   const newReq = new Request(newUrl, {
     method: request.method,
     headers: request.headers,
-    redirect: "follow",
+    // don't follow redirect to dockerhub blob upstream
+    redirect: isDockerHub ? "manual" : "follow",
   });
   const resp = await fetch(newReq);
   if (resp.status == 401) {
     return responseUnauthorized(url);
+  }
+  // handle dockerhub blob redirect manually
+  if (isDockerHub && resp.status == 307) {
+    const location = new URL(resp.headers.get("Location"));
+    const redirectResp = await fetch(location.toString(), {
+      method: "GET",
+      redirect: "follow",
+    });
+    return redirectResp;
   }
   return resp;
 }
@@ -136,7 +146,7 @@ async function fetchToken(wwwAuthenticate, scope, authorization) {
   if (scope) {
     url.searchParams.set("scope", scope);
   }
-  headers = new Headers();
+  const headers = new Headers();
   if (authorization) {
     headers.set("Authorization", authorization);
   }
@@ -148,12 +158,12 @@ function responseUnauthorized(url) {
   if (MODE == "debug") {
     headers.set(
       "Www-Authenticate",
-      `Bearer realm="http://${url.host}/v2/auth",service="cloudflare-proxy"`
+      `Bearer realm="http://${url.host}/v2/auth",service="cloudflare-docker-proxy"`
     );
   } else {
     headers.set(
       "Www-Authenticate",
-      `Bearer realm="https://${url.hostname}/v2/auth",service="cloudflare-proxy"`
+      `Bearer realm="https://${url.hostname}/v2/auth",service="cloudflare-docker-proxy"`
     );
   }
   return new Response(JSON.stringify({ message: "UNAUTHORIZED" }), {
