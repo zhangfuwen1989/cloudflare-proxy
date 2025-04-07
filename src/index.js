@@ -18,6 +18,7 @@ const routes = {
  "npmjs.bugaoxing.com": "https://registry.npmjs.org",
  "cnpmjs.bugaoxing.com": "http://r.cnpmjs.org",
  "hub.docker.bugaoxing.com": "https://hub.docker.com",
+ "gh.bugaoxing.com": "https://github.com",
 };
 
 function routeByHosts(host) {
