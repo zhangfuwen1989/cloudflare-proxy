@@ -17,6 +17,7 @@ const routes = {
  "npmjs.bugaoxing.com": "https://registry.npmjs.org",
  "cnpmjs.bugaoxing.com": "http://r.cnpmjs.org",
  "hub.docker.bugaoxing.com": "https://hub.docker.com",
+  "helm-rancher.bugaoxing.com": "https://releases.rancher.com",
 };
 
 function routeByHosts(host) {
